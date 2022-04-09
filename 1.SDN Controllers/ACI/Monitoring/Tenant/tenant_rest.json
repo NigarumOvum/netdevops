@@ -1,0 +1,3 @@
+#Monitor tenants
+
+GET URL: http://APIC-IP/api/mo/uni.json?query-target=subtree&target-subtree-class=fvTenant

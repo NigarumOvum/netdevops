@@ -1,0 +1,26 @@
+#Configure a Node-Profile in Routed L3-network under specific tenant
+
+#Note 1: Replace "TENANT_NAME" with the tenant name in the POST URL
+#Note 2: Replace "EXT_NET_NAME" with the Routed-L3-network name in th POST URL
+
+POST URL: http://APIC-IP/api/mo/uni/tn-TENANT_NAME/out-EXT_NET_NAME.json
+Content-Type: application/json
+Cache-Control: no-cache
+POST BODY :
+{
+	"l3extLNodeP": {
+		"attributes": {
+			"name": "node_Prof"
+		},
+		"children": [
+			{
+		    	"l3extRsNodeL3OutAtt": {
+					"attributes": {
+						"rtrId": "1.0.0.2",
+						"tDn": "topology/pod-1/node-102"
+					}
+				}
+			}
+		]
+	}
+}

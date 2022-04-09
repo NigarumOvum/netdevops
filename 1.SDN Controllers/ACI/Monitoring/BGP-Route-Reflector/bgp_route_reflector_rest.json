@@ -1,0 +1,4 @@
+#Monitor BGP Route-Reflector
+
+GET URL: http://APIC-IP/api/node/mo/uni/fabric/bgpInstP-default/rr.json?query-target=subtree&target-subtree-class=bgpRRNodePEp
+

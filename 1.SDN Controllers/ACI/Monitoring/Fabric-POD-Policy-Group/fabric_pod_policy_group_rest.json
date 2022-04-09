@@ -1,0 +1,4 @@
+#Monitor Fabric POD-policy group
+
+GET URL: http://APIC-IP/api/node/mo/uni/fabric/funcprof.json?query-target=subtree&target-subtree-class=fabricPodPGrp
+

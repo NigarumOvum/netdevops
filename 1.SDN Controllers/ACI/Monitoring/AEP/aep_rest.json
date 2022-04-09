@@ -1,0 +1,4 @@
+#Monitor Attachable Access Entity Profiles
+
+GET URL: http://APIC-IP/api/node/mo/uni/infra.json?query-target=subtree&target-subtree-class=infraAttEntityP
+

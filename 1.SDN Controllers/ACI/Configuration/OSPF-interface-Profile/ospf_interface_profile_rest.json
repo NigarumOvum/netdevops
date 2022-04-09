@@ -1,0 +1,29 @@
+#Configure a OSPF-interface-profile under Node-Profile in Routed L3-network under specific tenant
+
+#Note 1: Replace "TENANT_NAME" with the tenant name in the POST URL
+#Note 2: Replace "EXT_NET_NAME" with the Routed-L3-network name in th POST URL
+#Note 3: Replace "NODE_PROF_NAME" with the Node-Profile name in th POST URL
+
+POST URL: http://APIC-IP/api/mo/uni/tn-TENANT_NAME/out-EXT_NET_NAME/lnodep-NODE_PROF_NAME.json
+Content-Type: application/json
+Cache-Control: no-cache
+POST BODY :
+{
+	"l3extLIfP": {
+		"attributes": {
+            "name":"ospf_int_prof"
+		},
+        "children": [
+            {
+                "l3extRsPathL3OutAtt": {
+                    "attributes": {
+                		"addr": "30.30.30.1/24",
+            			"mtu": "1500",
+            			"tDn":"topology/pod-1/paths-101/pathep-[eth1/1]"
+	            	}
+            	}
+        	}
+        ]
+
+	}
+}

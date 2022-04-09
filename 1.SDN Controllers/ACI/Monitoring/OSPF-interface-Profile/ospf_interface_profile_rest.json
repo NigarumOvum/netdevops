@@ -1,0 +1,7 @@
+#Monitor OSPF-interface-profile under Node-Profile in Routed L3-network under specific tenant
+
+#Note 1: Replace "TENANT_NAME" with the tenant name in the GET URL
+#Note 2: Replace "EXT_NET_NAME" with the Routed-L3-network name in th GET URL
+#Note 3: Replace "NODE_PROF_NAME" with the Node-Profile name in th GET URL
+
+GET URL: http://APIC-IP/api/mo/uni/tn-TENANT_NAME/out-EXT_NET_NAME/lnodep-NODE_PROF_NAME.json?query-target=subtree&target-subtree-class=l3extLIfP

@@ -1,0 +1,1139 @@
+{
+    "virtuals": [
+        {
+            "addressStatus": "yes",
+            "autoLasthop": "default",
+            "cmpEnabled": "yes",
+            "connectionLimit": 0,
+            "destination": "/Common/10.190.1.2:443",
+            "enabled": true,
+            "fullPath": "/Common/virtual1",
+            "generation": 15839,
+            "gtmScore": 0,
+            "ipProtocol": "tcp",
+            "kind": "tm:ltm:virtual:virtualstate",
+            "mask": "255.255.255.255",
+            "mirror": "disabled",
+            "mobileAppTunnel": "disabled",
+            "name": "virtual1",
+            "nat64": "disabled",
+            "partition": "Common",
+            "policiesReference": {
+                "isSubcollection": true,
+                "link": "https://localhost/mgmt/tm/ltm/virtual/~Common~virtual1/policies?ver=12.1.0"
+            },
+            "pool": "/Common/test_pool",
+            "poolReference": {
+                "link": "https://localhost/mgmt/tm/ltm/pool/~Common~test_pool?ver=12.1.0"
+            },
+            "profilesReference": {
+                "isSubcollection": true,
+                "link": "https://localhost/mgmt/tm/ltm/virtual/~Common~virtual1/profiles?ver=12.1.0"
+            },
+            "rateLimit": "disabled",
+            "rateLimitDstMask": 0,
+            "rateLimitMode": "object",
+            "rateLimitSrcMask": 0,
+            "rules": [
+                "/test/https_redirect"
+            ],
+            "rulesReference": [
+              {
+                "link": "https://localhost/mgmt/tm/ltm/rule/~test~https_redirect?ver=12.1.0"
+              }
+            ],
+            "selfLink": "https://localhost/mgmt/tm/ltm/virtual/~Common~virtual1?ver=12.1.0",
+            "serviceDownImmediateAction": "none",
+            "source": "0.0.0.0/0",
+            "sourceAddressTranslation": {
+                "type": "none"
+            },
+            "sourcePort": "preserve",
+            "synCookieStatus": "not-activated",
+            "translateAddress": "enabled",
+            "translatePort": "enabled",
+            "vlansDisabled": true,
+            "vsIndex": 111
+        },
+        {
+            "addressStatus": "yes",
+            "autoLasthop": "default",
+            "cmpEnabled": "yes",
+            "connectionLimit": 0,
+            "description": "This is a virtual server",
+            "destination": "/test/10.190.6.7:80",
+            "enabled": true,
+            "fullPath": "/test/virtual2",
+            "generation": 15857,
+            "gtmScore": 0,
+            "ipProtocol": "tcp",
+            "kind": "tm:ltm:virtual:virtualstate",
+            "mask": "255.255.255.255",
+            "mirror": "disabled",
+            "mobileAppTunnel": "disabled",
+            "name": "virtual2",
+            "nat64": "disabled",
+            "partition": "test",
+            "policiesReference": {
+                "isSubcollection": true,
+                "link": "https://localhost/mgmt/tm/ltm/virtual/~test~virtual2/policies?ver=12.1.0"
+            },
+            "pool": "/test/pool1",
+            "poolReference": {
+                "link": "https://localhost/mgmt/tm/ltm/pool/~test~pool1?ver=12.1.0"
+            },
+            "profilesReference": {
+                "isSubcollection": true,
+                "link": "https://localhost/mgmt/tm/ltm/virtual/~test~virtual2/profiles?ver=12.1.0"
+            },
+            "rateLimit": "disabled",
+            "rateLimitDstMask": 0,
+            "rateLimitMode": "object",
+            "rateLimitSrcMask": 0,
+            "selfLink": "https://localhost/mgmt/tm/ltm/virtual/~test~virtual2?ver=12.1.0",
+            "serviceDownImmediateAction": "none",
+            "source": "0.0.0.0/0",
+            "sourceAddressTranslation": {
+                "type": "none"
+            },
+            "sourcePort": "preserve",
+            "synCookieStatus": "not-activated",
+            "translateAddress": "enabled",
+            "translatePort": "enabled",
+            "vlansDisabled": true,
+            "vsIndex": 112
+        }
+    ],
+    "pools": [
+        {
+            "allowNat": "yes",
+            "allowSnat": "yes",
+            "fullPath": "/Common/test_pool",
+            "generation": 15837,
+            "ignorePersi$stedWeight": "disabled",
+            "ipTosToClient": "pass-through",
+            "ipTosToServer": "pass-through",
+            "kind": "tm:ltm:pool:poolstate",
+            "linkQosToClient": "pass-through",
+            "linkQosToServer": "pass-through",
+            "loadBalancingMode": "least-connections-member",
+            "membersReference": {
+                "isSubcollection": true,
+                "items": [
+                    {
+                        "address": "1.2.3.4",
+                        "connectionLimit": 0,
+                        "dynamicRatio": 1,
+                        "ephemeral": "false",
+                        "fqdn": {
+                            "autopopulate": "disabled"
+                        },
+                        "fullPath": "/Common/1.2.3.4:20001",
+                        "generation": 15835,
+                        "inheritProfile": "enabled",
+                        "kind": "tm:ltm:pool:members:membersstate",
+                        "logging": "disabled",
+                        "monitor": "default",
+                        "name": "1.2.3.4:20001",
+                        "nameReference": {
+                            "link": "https://localhost/mgmt/tm/ltm/node/~Common~1.2.3.4:20001?ver=12.1.0"
+                        },
+                        "partition": "Common",
+                        "priorityGroup": 0,
+                        "rateLimit": "disabled",
+                        "ratio": 1,
+                        "selfLink": "https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members/~Common~1.2.3.4:20001?ver=12.1.0",
+                        "session": "monitor-enabled",
+                        "state": "down"
+                    },
+                    {
+                        "address": "1.2.3.4",
+                        "connectionLimit": 0,
+                        "dynamicRatio": 1,
+                        "ephemeral": "false",
+                        "fqdn": {
+                            "autopopulate": "disabled"
+                        },
+                        "fullPath": "/Common/1.2.3.4:20002",
+                        "generation": 15837,
+                        "inheritProfile": "enabled",
+                        "kind": "tm:ltm:pool:members:membersstate",
+                        "logging": "disabled",
+                        "monitor": "default",
+                        "name": "1.2.3.4:20002",
+                        "nameReference": {
+                            "link": "https://localhost/mgmt/tm/ltm/node/~Common~1.2.3.4:20002?ver=12.1.0"
+                        },
+                        "partition": "Common",
+                        "priorityGroup": 0,
+                        "rateLimit": "disabled",
+                        "ratio": 1,
+                        "selfLink": "https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members/~Common~1.2.3.4:20002?ver=12.1.0",
+                        "session": "monitor-enabled",
+                        "state": "down"
+                    }
+                ],
+                "link": "https://localhost/mgmt/tm/ltm/pool/~Common~test_pool/members?ver=12.1.0"
+            },
+            "minActiveMembers": 0,
+            "minUpMembers": 0,
+            "minUpMembersAction": "failover",
+            "minUpMembersChecking": "disabled",
+            "monitor": "/Common/http ",
+            "name": "test_pool",
+            "partition": "Common",
+            "queueDepthLimit": 0,
+            "queueOnConnectionLimit": "disabled",
+            "queueTimeLimit": 0,
+            "reselectTries": 0,
+            "selfLink": "https://localhost/mgmt/tm/ltm/pool/~Common~test_pool?ver=12.1.0",
+            "serviceDownAction": "no$ne",
+            "slowRampTime": 10
+        },
+        {
+            "allowNat": "yes",
+            "allowSnat": "yes",
+            "fullPath": "/test/pool1",
+            "generation": 15844,
+            "ignorePersistedWeight": "disabled",
+            "ipTosToClient": "pass-through",
+            "ipTosToServer": "pass-through",
+            "kind": "tm:ltm:pool:poolstate",
+            "linkQosToClient": "pass-through",
+            "linkQosToServer": "pass-through",
+            "loadBalancingMode": "round-robin",
+            "membersReference": {
+                "isSubcollection": true,
+                "items": [
+                    {
+                        "address": "5.6.7.8",
+                        "connectionLimit": 0,
+                        "dynamicRatio": 1,
+                        "ephemeral": "false",
+                        "fqdn": {
+                            "autopopulate": "disabled"
+                        },
+                        "fullPath": "/test/5.6.7.8:30001",
+                        "generation": 15842,
+                        "inheritProfile": "enabled",
+                        "kind": "tm:ltm:pool:members:membersstate",
+                        "logging": "disabled",
+                        "monitor": "default",
+                        "name": "5.6.7.8:30001",
+                        "nameReference": {
+                            "link": "https://localhost/mgmt/tm/ltm/node/~test~5.6.7.8:30001?ver=12.1.0"
+                        },
+                        "partition": "test",
+                        "priorityGroup": 0,
+                        "rateLimit": "disabled",
+                        "ratio": 1,
+                        "selfLink": "https://localhost/mgmt/tm/ltm/pool/~test~pool1/members/~test~5.6.7.8:30001?ver=12.1.0",
+                        "session": "monitor-enabled",
+                        "state": "down"
+                    },
+                    {
+                        "address": "5.6.7.8",
+                        "connectionLimit": 0,
+                        "dynamicRatio": 1,
+                        "ephemeral": "false",
+                        "fqdn": {
+                            "autopopulate": "disabled"
+                        },
+                        "fullPath": "/test/5.6.7.8:30002",
+                        "generation": 15844,
+                        "inheritProfile": "enabled",
+                        "kind": "tm:ltm:pool:members:membersstate",
+                        "logging": "disabled",
+                        "monitor": "default",
+                        "name": "5.6.7.8:30002",
+                        "nameReference": {
+                            "link": "https://localhost/mgmt/tm/ltm/node/~test~5.6.7.8:30002?ver=12.1.0"
+                        },
+                        "partition": "test",
+                        "priorityGroup": 0,
+                        "rateLimit": "disabled",
+                        "ratio": 1,
+                        "selfLink": "https://localhost/mgmt/tm/ltm/pool/~test~pool1/members/~test~5.6.7.8:30002?ver=12.1.0",
+                        "session": "monitor-enabled",
+                        "state": "down"
+                    }
+                ],
+                "link": "https://localhost/mgmt/tm/ltm/pool/~test~pool1/members?ver=12.1.0"
+            },
+            "minActiveMembers": 0,
+            "minUpMembers": 0,
+            "minUpMembersAction": "failover",
+            "minUpMembersChecking": "disabled",
+            "monitor": "/Common/tcp ",
+            "name": "pool1",
+            "partition": "test",
+            "queueDepthLimit": 0,
+            "queueOnConnectionLimit": "disabled",
+            "queueTimeLimit": 0,
+            "reselectTries": 0,
+            "selfLink": "https://localhost/mgmt/tm/ltm/pool/~test~pool1?ver=12.1.0",
+            "serviceDownAction": "none",
+            "slowRampTime": 10
+        }
+    ],
+    "iapps": [
+        {
+            "description": "This is a test iApp",
+            "deviceGroup": "none",
+            "fullPath": "/test/MyAppService.app/MyAppService",
+            "generation": 15866,
+            "inheritedDevicegroup": "true",
+            "inheritedTrafficGroup": "true",
+            "kind": "tm:sys:application:service:servicestate",
+            "name": "MyAppService",
+            "partition": "test",
+            "selfLink": "https://localhost/mgmt/tm/sys/application/service/~test~MyAppService.app~MyAppService?ver=12.1.0",
+            "strictUpdates": "enabled",
+            "subPath": "MyAppService.app",
+            "tables": [
+                {
+                    "columnNames": [
+                        "addr",
+                        "port",
+                        "connection_limit"
+                    ],
+                    "name": "pool__members",
+                    "rows": [
+                        {
+                            "row": [
+                                "10.2.3.4",
+                                "30001",
+                                "0"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "10.2.3.4",
+                                "30002",
+                                "0"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "10.2.3.4",
+                                "30003",
+                                "0"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "10.2.3.4",
+                                "30004",
+                                "0"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "10.2.3.4",
+                                "30005",
+                                "0"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "template": "/Common/f5.http",
+            "templateModified": "no",
+            "templateReference": {
+                "link": "https://localhost/mgmt/tm/sys/application/template/~Common~f5.http?ver=12.1.0"
+            },
+            "trafficGroup": "/Common/traffic-group-1",
+            "trafficGroupReference": {
+                "link": "https://localhost/mgmt/tm/cm/traffic-group/~Common~traffic-group-1?ver=12.1.0"
+            },
+            "variables": [
+                {
+                    "encrypted": "no",
+                    "name": "client__standard_caching_with_wa",
+                    "value": "/#create_new#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "client__standard_caching_without_wa",
+                    "value": "/#do_not_use#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "client__tcp_wan_opt",
+                    "value": "/#create_new#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "monitor__frequency",
+                    "value": "30"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "monitor__monitor",
+                    "value": "/#create_new#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "monitor__response",
+                    "value": "none"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "monitor__uri",
+                    "value": "/"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "net__client_mode",
+                    "value": "wan"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "net__server_mode",
+                    "value": "lan"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "net__snat_type",
+                    "value": "automap"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "net__vlan_mode",
+                    "value": "all"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__addr",
+                    "value": "10.10.1.100"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__http",
+                    "value": "/#create_new#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__lb_method",
+                    "value": "round-robin"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__mask",
+                    "value": "255.255.255.255"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__persist",
+                    "value": "/#do_not_use#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__pool_to_use",
+                    "value": "/#create_new#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__port",
+                    "value": "80"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "server__ntlm",
+                    "value": "/#do_not_use#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "server__oneconnect",
+                    "value": "/#create_new#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "server__tcp_lan_opt",
+                    "value": "/#create_new#"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "ssl_encryption_questions__advanced",
+                    "value": "yes"
+                }
+            ]
+        },
+        {
+            "description": "Deployed by appsvcs_integration_v2.0.002 in Standalone mode on 05/30/17 09:20:50",
+            "deviceGroup": "none",
+            "fullPath": "/test/appsvc.app/appsvc",
+            "generation": 15873,
+            "inheritedDevicegroup": "true",
+            "inheritedTrafficGroup": "true",
+            "kind": "tm:sys:application:service:servicestate",
+            "name": "appsvc",
+            "partition": "test",
+            "selfLink": "https://localhost/mgmt/tm/sys/application/service/~test~appsvc.app~appsvc?ver=12.1.0",
+            "strictUpdates": "enabled",
+            "subPath": "appsvc.app",
+            "tables": [
+                {
+                    "columnNames": [
+                        "Group",
+                        "Target",
+                        "Parameter"
+                    ],
+                    "name": "l7policy__rulesAction",
+                    "rows": [
+                        {
+                            "row": [
+                                "0",
+                                "forward/request/reset",
+                                "none"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "default",
+                                "forward/request/select/pool",
+                                "pool:0"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "columnNames": [
+                        "Group",
+                        "Operand",
+                        "Negate",
+                        "Condition",
+                        "Value",
+                        "CaseSensitive",
+                        "Missing"
+                    ],
+                    "name": "l7policy__rulesMatch",
+                    "rows": [
+                        {
+                            "row": [
+                                "0",
+                                "http-uri/request/path",
+                                "no",
+                                "starts-with",
+                                "/env",
+                                "no",
+                                "no"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "default",
+                                "",
+                                "no",
+                                "",
+                                "",
+                                "no",
+                                "no"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "columnNames": [
+                        "Index",
+                        "Name",
+                        "Type",
+                        "Options"
+                    ],
+                    "name": "monitor__Monitors",
+                    "rows": [
+                        {
+                            "row": [
+                                "0",
+                                "/Common/tcp",
+                                "none",
+                                "none"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "columnNames": [
+                        "Index",
+                        "IPAddress",
+                        "Port",
+                        "ConnectionLimit",
+                        "Ratio",
+                        "PriorityGroup",
+                        "State"
+                    ],
+                    "name": "pool__Members",
+                    "rows": [
+                        {
+                            "row": [
+                                "0",
+                                "10.2.3.5",
+                                "30001",
+                                "1000",
+                                "1",
+                                "0",
+                                "enabled"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "0",
+                                "10.2.3.5",
+                                "30002",
+                                "1000",
+                                "1",
+                                "0",
+                                "enabled"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "0",
+                                "10.2.3.5",
+                                "30003",
+                                "1000",
+                                "1",
+                                "0",
+                                "enabled"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "0",
+                                "10.2.3.5",
+                                "30004",
+                                "1000",
+                                "1",
+                                "0",
+                                "enabled"
+                            ]
+                        },
+                        {
+                            "row": [
+                                "0",
+                                "10.2.3.5",
+                                "30005",
+                                "1000",
+                                "1",
+                                "0",
+                                "enabled"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "columnNames": [
+                        "Index",
+                        "Name",
+                        "Description",
+                        "LbMethod",
+                        "Monitor",
+                        "AdvOptions"
+                    ],
+                    "name": "pool__Pools",
+                    "rows": [
+                        {
+                            "row": [
+                                "0",
+                                "",
+                                "",
+                                "round-robin",
+                                "0",
+                                "none"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "template": "/Common/appsvcs_integration_v2.0.002",
+            "templateModified": "no",
+            "templateReference": {
+                "link": "https://localhost/mgmt/tm/sys/application/template/~Common~appsvcs_integration_v2.0.002?ver=12.1.0"
+            },
+            "trafficGroup": "/Common/traffic-group-1",
+            "trafficGroupReference": {
+                "link": "https://localhost/mgmt/tm/cm/traffic-group/~Common~traffic-group-1?ver=12.1.0"
+            },
+            "variables": [
+                {
+                    "encrypted": "no",
+                    "name": "iapp__logLevel",
+                    "value": "7"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "iapp__mode",
+                    "value": "auto"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "iapp__routeDomain",
+                    "value": "auto"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "l7policy__strategy",
+                    "value": "/Common/first-match"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__DefaultPoolIndex",
+                    "value": "0"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__addr",
+                    "value": "10.10.2.100"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__mask",
+                    "value": "255.255.255.255"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "pool__port",
+                    "value": "80"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "vs__Name",
+                    "value": "appsvc_iapp_vs"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "vs__ProfileClientProtocol",
+                    "value": "/Common/tcp-wan-optimized"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "vs__ProfileHTTP",
+                    "value": "/Common/http"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "vs__ProfileServerProtocol",
+                    "value": "/Common/tcp-lan-optimized"
+                },
+                {
+                    "encrypted": "no",
+                    "name": "vs__SNATConfig",
+                    "value": "automap"
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "address": "1.2.3.4",
+            "connectionLimit": 0,
+            "dynamicRatio": 1,
+            "ephemeral": "false",
+            "fqdn": {
+                "addressFamily": "ipv4",
+                "autopopulate": "disabled",
+                "downInterval": 5,
+                "interval": "3600"
+            },
+            "fullPath": "/test/1.2.3.4",
+            "generation": 14842,
+            "kind": "tm:ltm:node:nodestate",
+            "logging": "disabled",
+            "monitor": "default",
+            "name": "1.2.3.4",
+            "partition": "test",
+            "rateLimit": "disabled",
+            "ratio": 1,
+            "selfLink": "https://localhost/mgmt/tm/ltm/node/~test~1.2.3.4?ver=12.1.0",
+            "session": "user-enabled",
+            "state": "unchecked"
+        },
+        {
+            "address": "5.6.7.8",
+            "connectionLimit": 0,
+            "dynamicRatio": 1,
+            "ephemeral": "false",
+            "fqdn": {
+                "addressFamily": "ipv4",
+                "autopopulate": "disabled",
+                "downInterval": 5,
+                "interval": "3600"
+            },
+            "fullPath": "/test/5.6.7.8",
+            "generation": 15842,
+            "kind": "tm:ltm:node:nodestate",
+            "logging": "disabled",
+            "monitor": "default",
+            "name": "5.6.7.8",
+            "partition": "test",
+            "rateLimit": "disabled",
+            "ratio": 1,
+            "selfLink": "https://localhost/mgmt/tm/ltm/node/~test~5.6.7.8?ver=12.1.0",
+            "session": "user-enabled",
+            "state": "unchecked"
+        },
+        {
+            "address": "10.2.3.4",
+            "connectionLimit": 0,
+            "dynamicRatio": 1,
+            "ephemeral": "false",
+            "fqdn": {
+                "addressFamily": "ipv4",
+                "autopopulate": "disabled",
+                "downInterval": 5,
+                "interval": "3600"
+            },
+            "fullPath": "/test/10.2.3.4",
+            "generation": 15866,
+            "kind": "tm:ltm:node:nodestate",
+            "logging": "disabled",
+            "monitor": "default",
+            "name": "10.2.3.4",
+            "partition": "test",
+            "rateLimit": "disabled",
+            "ratio": 1,
+            "selfLink": "https://localhost/mgmt/tm/ltm/node/~test~10.2.3.4?ver=12.1.0",
+            "session": "user-enabled",
+            "state": "unchecked"
+        },
+        {
+            "address": "10.2.3.5",
+            "connectionLimit": 0,
+            "dynamicRatio": 1,
+            "ephemeral": "false",
+            "fqdn": {
+                "addressFamily": "ipv4",
+                "autopopulate": "disabled",
+                "downInterval": 5,
+                "interval": "3600"
+            },
+            "fullPath": "/test/10.2.3.5%0",
+            "generation": 15872,
+            "kind": "tm:ltm:node:nodestate",
+            "logging": "disabled",
+            "monitor": "default",
+            "name": "10.2.3.5%0",
+            "partition": "test",
+            "rateLimit": "disabled",
+            "ratio": 1,
+            "selfLink": "https://localhost/mgmt/tm/ltm/node/~test~10.2.3.5%250?ver=12.1.0",
+            "session": "user-enabled",
+            "state": "unchecked"
+        }
+    ],
+    "policies": [
+        {
+            "controls": [
+                "forwarding"
+            ],
+            "fullPath": "/test/wrapper_policy",
+            "generation": 381,
+            "kind": "tm:ltm:policy:policystate",
+            "lastModified": "2017-09-26T19:21:32Z",
+            "name": "wrapper_policy",
+            "partition": "test",
+            "references": {},
+            "requires": [
+                "http"
+            ],
+            "rulesReference": {
+                "isSubcollection": true,
+                "items": [
+                    {
+                        "actionsReference": {
+                            "isSubcollection": true,
+                            "items": [
+                                {
+                                    "code": 0,
+                                    "expirySecs": 0,
+                                    "forward": true,
+                                    "fullPath": "0",
+                                    "generation": 381,
+                                    "kind": "tm:ltm:policy:rules:actions:actionsstate",
+                                    "length": 0,
+                                    "name": "0",
+                                    "offset": 0,
+                                    "port": 0,
+                                    "request": true,
+                                    "reset": true,
+                                    "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule1/actions/0?ver=12.1.0",
+                                    "status": 0,
+                                    "timeout": 0,
+                                    "vlanId": 0
+                                }
+                            ],
+                            "link": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule1/actions?ver=12.1.0"
+                        },
+                        "conditionsReference": {
+                            "isSubcollection": true,
+                            "items": [
+                                {
+                                    "caseInsensitive": true,
+                                    "equals": true,
+                                    "external": true,
+                                    "fullPath": "0",
+                                    "generation": 381,
+                                    "host": true,
+                                    "httpHost": true,
+                                    "index": 0,
+                                    "kind": "tm:ltm:policy:rules:conditions:conditionsstate",
+                                    "name": "0",
+                                    "present": true,
+                                    "remote": true,
+                                    "request": true,
+                                    "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule1/conditions/0?ver=12.1.0",
+                                    "values": [
+                                        "http://www.mysite.com"
+                                    ]
+                                },
+                                {
+                                    "caseInsensitive": true,
+                                    "equals": true,
+                                    "external": true,
+                                    "fullPath": "1",
+                                    "generation": 381,
+                                    "httpUri": true,
+                                    "index": 2,
+                                    "kind": "tm:ltm:policy:rules:conditions:conditionsstate",
+                                    "name": "1",
+                                    "pathSegment": true,
+                                    "present": true,
+                                    "remote": true,
+                                    "request": true,
+                                    "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule1/conditions/1?ver=12.1.0",
+                                    "values": [
+                                        "articles"
+                                    ]
+                                }
+                            ],
+                            "link": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule1/conditions?ver=12.1.0"
+                        },
+                        "fullPath": "/test/rule1",
+                        "generation": 381,
+                        "kind": "tm:ltm:policy:rules:rulesstate",
+                        "name": "rule1",
+                        "ordinal": 0,
+                        "partition": "test",
+                        "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule1?ver=12.1.0"
+                    },
+                    {
+                        "actionsReference": {
+                            "isSubcollection": true,
+                            "items": [
+                                {
+                                    "code": 0,
+                                    "expirySecs": 0,
+                                    "forward": true,
+                                    "fullPath": "0",
+                                    "generation": 381,
+                                    "kind": "tm:ltm:policy:rules:actions:actionsstate",
+                                    "length": 0,
+                                    "name": "0",
+                                    "offset": 0,
+                                    "pool": "/test/pool3",
+                                    "poolReference": {
+                                        "link": "https://localhost/mgmt/tm/ltm/pool/~test~pool2?ver=12.1.0"
+                                    },
+                                    "port": 0,
+                                    "request": true,
+                                    "select": true,
+                                    "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule2/actions/0?ver=12.1.0",
+                                    "status": 0,
+                                    "timeout": 0,
+                                    "vlanId": 0
+                                }
+                            ],
+                            "link": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule2/actions?ver=12.1.0"
+                        },
+                        "conditionsReference": {
+                            "isSubcollection": true,
+                            "items": [
+                                {
+                                    "caseInsensitive": true,
+                                    "equals": true,
+                                    "external": true,
+                                    "fullPath": "0",
+                                    "generation": 381,
+                                    "httpUri": true,
+                                    "index": 0,
+                                    "kind": "tm:ltm:policy:rules:conditions:conditionsstate",
+                                    "name": "0",
+                                    "not": true,
+                                    "path": true,
+                                    "present": true,
+                                    "remote": true,
+                                    "request": true,
+                                    "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule2/conditions/0?ver=12.1.0",
+                                    "values": [
+                                        "www.mysite.com"
+                                    ]
+                                }
+                            ],
+                            "link": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule2/conditions?ver=12.1.0"
+                        },
+                        "fullPath": "/test/rule2",
+                        "generation": 381,
+                        "kind": "tm:ltm:policy:rules:rulesstate",
+                        "name": "rule2",
+                        "ordinal": 1,
+                        "partition": "test",
+                        "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule2?ver=12.1.0"
+                    },
+                    {
+                        "actionsReference": {
+                            "isSubcollection": true,
+                            "items": [
+                                {
+                                    "code": 0,
+                                    "expirySecs": 0,
+                                    "fullPath": "0",
+                                    "generation": 381,
+                                    "httpReply": true,
+                                    "kind": "tm:ltm:policy:rules:actions:actionsstate",
+                                    "length": 0,
+                                    "location": "http://www.othersite.com",
+                                    "name": "0",
+                                    "offset": 0,
+                                    "port": 0,
+                                    "redirect": true,
+                                    "request": true,
+                                    "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule3/actions/0?ver=12.1.0",
+                                    "status": 0,
+                                    "timeout": 0,
+                                    "vlanId": 0
+                                }
+                            ],
+                            "link": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule3/actions?ver=12.1.0"
+                        },
+                        "conditionsReference": {
+                            "isSubcollection": true,
+                            "items": [
+                                {
+                                    "all": true,
+                                    "caseSensitive": true,
+                                    "external": true,
+                                    "fullPath": "0",
+                                    "generation": 381,
+                                    "httpHeader": true,
+                                    "index": 0,
+                                    "kind": "tm:ltm:policy:rules:conditions:conditionsstate",
+                                    "name": "0",
+                                    "not": true,
+                                    "present": true,
+                                    "remote": true,
+                                    "request": true,
+                                    "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule3/conditions/0?ver=12.1.0",
+                                    "startsWith": true,
+                                    "tmName": "X-Foo",
+                                    "values": [
+                                        "ignore"
+                                    ]
+                                }
+                            ],
+                            "link": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule3/conditions?ver=12.1.0"
+                        },
+                        "fullPath": "/test/rule3",
+                        "generation": 381,
+                        "kind": "tm:ltm:policy:rules:rulesstate",
+                        "name": "rule3",
+                        "ordinal": 2,
+                        "partition": "test",
+                        "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules/~test~rule3?ver=12.1.0"
+                    }
+                ],
+                "link": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy/rules?ver=12.1.0"
+            },
+            "selfLink": "https://localhost/mgmt/tm/ltm/policy/~test~wrapper_policy?ver=12.1.0",
+            "status": "legacy",
+            "strategy": "/Common/first-match",
+            "strategyReference": {
+                "link": "https://localhost/mgmt/tm/ltm/policy-strategy/~Common~first-match?ver=12.1.0"
+            }
+        }
+    ],
+    "virtual_addresses": [],
+    "rules": [
+        {
+            "apiAnonymous": "when HTTP_REQUEST {HTTP::redirect https://[getfield [HTTP::port] ':' 1][HTTP::uri]}",
+            "fullPath": "/test/https_redirector",
+            "generation": 1,
+            "kind": "tm:ltm:rule:rulestate",
+            "name": "https_redirector",
+            "partition": "test",
+            "selfLink": "https://localhost/mgmt/tm/ltm/rule/~test~https_redirect?ver=12.1.0"
+        }
+    ],
+    "internaldatagroups": [
+        {
+            "fullPath": "/test/test-dg",
+            "generation": 1,
+            "kind": "tm:ltm:data-group:internal:internal-state",
+            "name": "test-dg",
+            "partition": "test",
+            "records": [
+                {
+                    "name": "my-record-name",
+                    "data": "data-value"
+                }
+            ],
+            "selfLink": "https://localhost/mgmt/tm/ltm/data-group/internal/~test~test-dg?ver=12.1.0",
+            "type": "string"
+        }
+    ],
+    "monitors": [
+        {
+            "adaptive": "disabled",
+            "adaptiveDivergenceType": "relative",
+            "adaptiveDivergenceValue": 25,
+            "adaptiveLimit": 200,
+            "adaptiveSamplingTimespan": 300,
+            "appService": "/test/MyAppService0.app/MyAppService0",
+            "appServiceReference": {
+                "link": "https://localhost/mgmt/tm/sys/application/service/~test~MyAppService0.app~MyAppService0?ver=12.1.0"
+            },
+            "defaultsFrom": "/Common/http",
+            "destination": "*:*",
+            "fullPath": "/test/MyAppService0.app/MyAppService0_http_monitor",
+            "generation": 0,
+            "interval": 30,
+            "ipDscp": 0,
+            "kind": "tm:ltm:monitor:http:httpstate",
+            "manualResume": "disabled",
+            "name": "MyAppService0_http_monitor",
+            "partition": "test",
+            "reverse": "disabled",
+            "selfLink": "https://localhost/mgmt/tm/ltm/monitor/http/~test~MyAppService0.app~MyAppService0_http_monitor?ver=12.1.0",
+            "send": "GET / HTTP/1.1\\r\\nHost: \\r\\nConnection: Close\\r\\n\\r\\n",
+            "subPath": "MyAppService0.app",
+            "timeUntilUp": 0,
+            "timeout": 91,
+            "transparent": "disabled",
+            "upInterval": 0
+        },
+        {
+            "adaptive": "disabled",
+            "adaptiveDivergenceType": "relative",
+            "adaptiveDivergenceValue": 25,
+            "adaptiveLimit": 200,
+            "adaptiveSamplingTimespan": 300,
+            "defaultsFrom": "/Common/http",
+            "destination": "*:*",
+            "fullPath": "/test/mon_http",
+            "generation": 0,
+            "interval": 5,
+            "ipDscp": 0,
+            "kind": "tm:ltm:monitor:http:httpstate",
+            "manualResume": "disabled",
+            "name": "mon_http",
+            "partition": "test",
+            "recv": "SERVER",
+            "reverse": "disabled",
+            "selfLink": "https://localhost/mgmt/tm/ltm/monitor/http/~test~mon_http?ver=12.1.0",
+            "send": "GET /\r\n",
+            "timeUntilUp": 0,
+            "timeout": 20,
+            "transparent": "disabled",
+            "upInterval": 0
+        }
+    ]
+}

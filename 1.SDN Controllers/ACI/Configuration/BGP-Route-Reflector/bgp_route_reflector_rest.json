@@ -1,0 +1,14 @@
+#Configure a BGP Route-Reflector
+
+POST URL: http://APIC-IP/api/node/mo/uni/fabric/bgpInstP-default/rr.json
+Content-Type: application/json
+Cache-Control: no-cache
+POST BODY :
+{
+    "bgpRRNodePEp": {
+        "attributes": {
+            "id": "201"
+        }
+    }
+}
+

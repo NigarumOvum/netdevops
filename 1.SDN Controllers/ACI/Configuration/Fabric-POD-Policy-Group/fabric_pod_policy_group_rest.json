@@ -1,0 +1,22 @@
+#Configure a Fabric POD-policy group
+
+POST URL: http://APIC-IP/api/node/mo/uni/fabric/funcprof.json
+Content-Type: application/json
+Cache-Control: no-cache
+POST BODY :
+{
+    "fabricPodPGrp": {
+        "attributes": {
+            "name": "PodPolicy"
+        },
+        "children": [
+            {
+                "fabricRsPodPGrpBGPRRP": {
+                    "attributes": {
+                        "tnBgpInstPolName":"default"
+                    }
+                }
+            }
+        ]
+    }
+}

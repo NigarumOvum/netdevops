@@ -1,0 +1,14 @@
+#Configure a Bridge Domain under specific tenant
+
+#Note: Replace "TENANT_NAME" with the tenant name in the POST URL
+
+POST URL: http://APIC-IP/api/mo/uni/tn-TENANT_NAME.json
+Content-Type: application/json
+Cache-Control: no-cache
+POST BODY :
+{
+    "fvBD": {
+        "attributes": {
+            "name": "test_bd"
+        }
+}

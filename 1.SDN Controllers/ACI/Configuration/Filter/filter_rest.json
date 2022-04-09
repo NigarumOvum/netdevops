@@ -1,0 +1,30 @@
+#Configure a Filter under specific tenant
+
+#Note: Replace "TENANT_NAME" with the tenant name in the POST URL
+
+POST URL: http://APIC-IP/api/mo/uni/tn-TENANT_NAME.json
+Content-Type: application/json
+Cache-Control: no-cache
+POST BODY :
+{
+    "vzFilter": {
+        "attributes": {
+            "name": "web_filter"
+        },
+        "children": [
+            {
+                "vzEntry": {
+                    "attributes": {
+                        "name": "web_filter",
+                        "etherT": "ip",
+                        "prot": "tcp", 
+                        "dFromPort": "http",
+                        "dToPort": "http",
+                        "sFromPort": "unspecified",
+                        "sToPort": "unspecified"
+                    }
+                }
+            }
+        ]
+    }
+}

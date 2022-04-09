@@ -1,0 +1,3 @@
+#Monitor Physical domains
+
+GET URL: http://APIC-IP/api/node/mo/uni.json?query-target=subtree&target-subtree-class=physDomP
